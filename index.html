@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="display">
+    <div class="cal">
+        <span class="button">1</span>
+        <span class="button">2</span>
+        <span class="button">3</span>
+        <span class="button">4</span>
+        <span class="button">5</span>
+        <span class="button">6</span>
+        <span class="button">7</span>
+        <span class="button">8</span>
+        <span class="button">9</span>
+        <span class="button">0</span>
+        <span class="button">.</span>
+        <span class="button">+</span>
+        <span class="button">*</span>
+        <span class="button">/</span>
+        <span class="button">-</span>
+        <span class="button">Reset</span>
+        <span class="button">=</span>
+
+    </div>
+    </div>
+</body>
+<script>
+var display = document.querySelector(".display");
+var buttons = document.querySelectorAll(".button");
+
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function() {
+    var value = this.innerHTML;
+    if (value == "Reset") {
+      display.value = "";
+    } else if (value == "=") {
+      display.value = eval(display.value);
+    } else {
+      display.value += value;
+    }
+  });
+}
+
+</script>
+</html>
